@@ -218,7 +218,7 @@ $(function()
 			        	console.log('xhr.readyState=',xhr.readyState);
 			          	console.log('xhr.status=',xhr.status);
 			          	console.log('response=',xhr.responseText);
-			
+						alert('Upload Status'+xhr.status);
 			          	var dataReturn = $.parseJSON(xhr.responseText);
 			          	var uploadResult = dataReturn['file'];
 			          	fileNameUni = dataReturn['file'];
@@ -267,6 +267,7 @@ $(function()
 	        xhr.send(data);
 	      }
 	 
+	      alert ("ended send");		 
 	   }
 	   reader.readAsDataURL(files[0]);
 }
