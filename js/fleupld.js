@@ -170,6 +170,8 @@ $(function()
 		event.stopPropagation(); // Stop stuff happening
 	    event.preventDefault(); // Totally stop stuff happening
 		
+		
+		alert ("Resize started");
 		var data = new FormData();
 	    $.each(files, function(key, value)
 	    {
@@ -199,7 +201,7 @@ $(function()
 	               tempH = MAX_HEIGHT;
 	            }
 	        }
-	 
+	 		alert ("Resize half way");
 	        var canvas = document.createElement('canvas');
 	        canvas.width = tempW;
 	        canvas.height = tempH;
@@ -207,6 +209,8 @@ $(function()
 	        ctx.drawImage(this, 0, 0, tempW, tempH);
 	        var dataURL = canvas.toDataURL("image/jpeg");
 	 
+	 
+	 		alert ("Resize completed transfer");
 	        var xhr = new XMLHttpRequest();
 	        xhr.onreadystatechange = function(ev){
 	        		$('#upload_progess').show();
@@ -224,7 +228,7 @@ $(function()
 			        	if (uploadStatus=='success'){
 			        		console.log('successfully uploaded file');
 			            	submitForm(event, data);
-			            	/*alert('Upload Complete');*/
+			            	alert('Upload Complete');
 	                		$('#upload_progess').hide();
 	                		close_all_divs();
 			            }else
