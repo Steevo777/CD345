@@ -214,11 +214,12 @@ $(function()
 	        var xhr = new XMLHttpRequest();
 	        xhr.onreadystatechange = function(ev){
 	        		$('#upload_progess').show();
+	        		alert('Upload Status '+xhr.status+'  ReadyState'+xhr.readyState);
 	        		if (xhr.readyState==4 && xhr.status==200){
 			        	console.log('xhr.readyState=',xhr.readyState);
 			          	console.log('xhr.status=',xhr.status);
 			          	console.log('response=',xhr.responseText);
-						alert('Upload Status'+xhr.status);
+						
 			          	var dataReturn = $.parseJSON(xhr.responseText);
 			          	var uploadResult = dataReturn['file'];
 			          	fileNameUni = dataReturn['file'];
