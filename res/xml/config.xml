@@ -1,0 +1,4 @@
+<access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+<access origin="http://www.a-information.com" />
+<access origin="http://www.a-information.com" subdomains="true" />
+<access origin=".*"/>
