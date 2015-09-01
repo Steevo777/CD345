@@ -258,7 +258,9 @@ $(function()
 			      }
 			};
 	        //end file progress
-	 
+	        
+	        xhr.onerror = function () { alert("errorstatus: " + xhr.status + " ajaxoptions: " + ajaxOptions + " throwError: " + thrownError); };
+	 		
 	        xhr.open('POST', 'http://www.a-information.com/chatdawg/484flue.php', true);
 	        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	        var data = 'image=' + dataURL;
